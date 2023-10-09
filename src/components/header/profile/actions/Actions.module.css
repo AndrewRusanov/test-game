@@ -19,7 +19,7 @@
   border-radius: 5px;
   text-align: center;
   border: none;
-  width: calc(100% / 3 - 10px);
+  width: calc(100% / 4 - 10px);
 }
 
 .actionsBtn:hover {
@@ -30,4 +30,12 @@
 .actionsBtn:active {
   background-color: #cf502c;
   opacity: 1;
+}
+
+.actionsBtn:last-of-type {
+  background-color: #cf502c;
+}
+
+.actionsBtn:last-of-type:active {
+  background-color: #595eb0;
 }
