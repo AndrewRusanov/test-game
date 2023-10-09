@@ -6,7 +6,7 @@
   flex-direction: row;
   width: calc(100% - 200px * 2);
   padding-bottom: 15px;
-  margin: 0 auto 50px;
+  margin: 0 auto 20px;
   font-family: 'RobotoSlab';
   border-bottom: 1px solid #cfe1d0;
 }
