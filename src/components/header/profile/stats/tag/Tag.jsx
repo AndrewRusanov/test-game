@@ -9,7 +9,6 @@ import styles from './Tag.module.css';
 // 5.	#101116
 
 const Tag = props => {
-  console.log('lalala', props);
   return <p className={styles.statsValue}>{props.statValue}</p>;
 };
 

@@ -20,3 +20,26 @@
   font-weight: 400;
   line-height: 1.4;
 }
+
+.editButton {
+  margin: auto 50px 20px;
+  color: white;
+  height: 50px;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 400;
+  background-color: #595eb0;
+  border-radius: 5px;
+  text-align: center;
+  border: none;
+}
+
+.editButton:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.editButton:active {
+  background-color: #604e9b;
+  opacity: 1;
+}
