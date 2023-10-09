@@ -1,7 +1,17 @@
+@import url(../../fonts/RobotoSlab.module.css);
+@import url(../../fonts/Roboto.module.css);
+
 .header {
   display: flex;
   padding-top: 120px;
   padding-bottom: 50px;
   margin: 0 auto;
   width: calc(100% - 50px * 2);
+}
+
+.characterName {
+  font-family: 'RobotoSlab';
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.4;
 }
