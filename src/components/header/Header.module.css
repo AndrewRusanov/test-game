@@ -3,15 +3,9 @@
 
 .header {
   display: flex;
-  padding-top: 120px;
-  padding-bottom: 50px;
-  margin: 0 auto;
-  width: calc(100% - 50px * 2);
-}
-
-.characterName {
+  flex-direction: row;
+  width: calc(100% - 200px * 2);
+  margin: 0 auto 50px;
   font-family: 'RobotoSlab';
-  font-size: 48px;
-  font-weight: 900;
-  line-height: 1.4;
+  border: 1px solid red;
 }

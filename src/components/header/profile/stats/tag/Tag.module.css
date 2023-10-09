@@ -1,0 +1,15 @@
+.statsValue {
+  width: calc(100% - 20px);
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 400;
+  background-color: #595eb0;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.statsValue:last-of-type {
+  grid-column: span 2;
+}

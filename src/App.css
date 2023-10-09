@@ -2,6 +2,8 @@
   max-width: 1920px;
   height: 100vh;
   font-family: 'Roboto', 'Arial', sans-serif;
-  background: linear-gradient(to top, #5f869a 20%, #181a1d 90%);
+  background: #101116;
   color: white;
+  margin: 0;
+  padding-top: 100px;
 }
