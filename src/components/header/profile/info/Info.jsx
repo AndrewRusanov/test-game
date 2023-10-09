@@ -6,9 +6,6 @@ const Info = () => {
     <div className={styles.infoContainer}>
       <h1 className={styles.characterName}>Имя персонажа</h1>
       <h2 className={styles.characterDescription}>Описание персонажа</h2>
-      <button type="button" className={styles.editButton}>
-        Редактировать
-      </button>
     </div>
   );
 };

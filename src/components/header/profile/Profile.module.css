@@ -1,6 +1,13 @@
 .profileContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
+}
+
+.profileWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, auto));
+  grid-template-rows: 2;
+  width: 50%;
 }
