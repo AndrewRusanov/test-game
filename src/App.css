@@ -1,4 +1,6 @@
 .page {
   max-width: 1920px;
-  background-color: #f3eee8;
+  height: 100vh;
+  background: linear-gradient(to top, #5f869a 20%, #181a1d 90%);
+  color: white;
 }
