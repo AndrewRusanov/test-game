@@ -9,7 +9,7 @@
 .profileWrapper {
   display: grid;
   grid-template-columns: 200px minmax(200px, auto);
-  width: 50%;
+  width: 100%;
   border-radius: 20px;
   background-color: #595eb0;
 }

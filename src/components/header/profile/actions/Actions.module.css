@@ -1,25 +1,32 @@
+/* >1440px */
 .actionsBtnContainer {
   grid-column: span 2;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  margin: auto;
+  width: calc(100% - 15px);
 }
 
 .actionsBtn {
   font-family: 'RobotoSlab';
   margin: 0 auto 5px;
-  color: white;
   height: 50px;
-  font-size: 16px;
-  line-height: 1.4;
-  font-weight: 400;
   background-color: #140d2a;
   border-radius: 5px;
   text-align: center;
   border: none;
   width: calc(100% / 4 - 10px);
+}
+
+.actionsBtnText {
+  color: white;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .actionsBtn:hover {
@@ -38,4 +45,10 @@
 
 .actionsBtn:last-of-type:active {
   background-color: #140d2a;
+}
+
+/* 1280px..1439px */
+@media screen and (max-width: 1439px) {
+  .actionsBtn {
+  }
 }
