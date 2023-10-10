@@ -1,8 +1,10 @@
+/* >1440px */
 .infoContainer {
   display: flex;
   flex-direction: column;
   font-family: 'RobotoSlab';
-  margin-left: 50px;
+  margin-left: 30px;
+  padding-right: 15px;
 }
 
 .characterName {
@@ -29,25 +31,35 @@
   overflow: hidden;
 }
 
-.editButton {
-  margin: auto 50px 10px;
-  color: white;
-  height: 50px;
-  font-size: 20px;
-  line-height: 1.4;
-  font-weight: 400;
-  background-color: #595eb0;
-  border-radius: 5px;
-  text-align: center;
-  border: none;
+/* 1280px..1439px */
+@media screen and (max-width: 1439px) {
+  .infoContainer {
+    margin-left: 20px;
+  }
+
+  .characterName {
+    max-width: 300px;
+    padding-top: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .characterDescription {
+    max-width: 300px;
+  }
 }
 
-.editButton:hover {
-  cursor: pointer;
-  opacity: 0.8;
-}
+/* <1280px */
+@media screen and (max-width: 1279px) {
+  .infoContainer {
+    margin-left: 15px;
+  }
 
-.editButton:active {
-  background-color: #cf502c;
-  opacity: 1;
+  .characterName {
+    padding-top: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
 }

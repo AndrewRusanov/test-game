@@ -1,7 +1,24 @@
+/* >1440px */
 .avatar {
   width: 160px;
   height: 200px;
-  padding-top: 30px;
-  margin: auto;
+  padding: 20px 0 10px;
+  margin: 0 20px;
   object-fit: contain;
+}
+
+/* 1280px..1439px */
+@media screen and (max-width: 1439px) {
+  .avatar {
+    width: 130px;
+    height: 170px;
+  }
+}
+
+/* <1280px */
+@media screen and (max-width: 1279px) {
+  .avatar {
+    width: 100px;
+    height: 140px;
+  }
 }

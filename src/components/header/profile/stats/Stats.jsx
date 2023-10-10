@@ -18,7 +18,7 @@ const Stats = () => {
       <h2 className={styles.statsTitle}>Умения</h2>
       <div className={styles.statsContainer}>
         {statsArray.map(element => {
-          return <Tag statValue={`${element}: `} />;
+          return <Tag key={element} statValue={`${element}: `} />;
         })}
       </div>
     </div>
