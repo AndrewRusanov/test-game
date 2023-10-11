@@ -26,6 +26,7 @@
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   font-family: 'RobotoSlab';
 }
 
@@ -33,6 +34,15 @@
   margin: 0 auto;
   padding: 15px 0 0;
   font-size: 38px;
+  line-height: 1.21;
+  font-weight: 700;
+}
+
+.createSubtitle {
+  margin: 20px auto;
+  padding: 0;
+  text-align: center;
+  font-size: 28px;
   line-height: 1.21;
   font-weight: 700;
 }
@@ -77,9 +87,9 @@
   line-height: 1.21;
   font-weight: 400;
   text-align: center;
-  width: 100%;
+  width: calc(100% - 50px);
   height: 50px;
-  margin: 15px 0 0;
+  margin: 15px auto 15px;
   border-radius: 5px;
 }
 

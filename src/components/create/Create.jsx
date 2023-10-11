@@ -54,6 +54,7 @@ const Create = () => {
               }}
             />
             <span className={styles.popupError} id="inputName-error"></span>
+            <h2 className={styles.createSubtitle}>Задайте базовые навыки</h2>
             <NavLink to="/main">
               <button type="submit" className={styles.createButton}>
                 Создать
