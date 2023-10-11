@@ -5,12 +5,12 @@ import Stats from './stats/Stats';
 import Avatar from './avatar/Avatar';
 import Actions from './actions/Actions';
 
-const Profile = ({ handleSetActive }) => {
+const Profile = ({ handleSetActive, name, about }) => {
   return (
     <div className={styles.profileContainer}>
       <div className={styles.profileWrapper}>
         <Avatar />
-        <Info />
+        <Info name={name} about={about} />
         <Actions
           handleSetActive={() => {
             handleSetActive(true);

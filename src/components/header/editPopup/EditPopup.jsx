@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './EdditPopup.module.css';
 import closeBtnImage from '../../../images/closeIcon.png';
 import classNames from 'classnames';
 
-const EditPopup = ({ active, setActive }) => {
+const EditPopup = ({ active, setActive, setName, setAbout }) => {
+  // состояния для инпутов
+  const [nameInputValue, setNameInputValue] = useState('');
+  const [aboutInputValue, setAboutInputValue] = useState('');
+
+  // Функция для сбора данных с формы
+  const getInputValues = () => {
+    const formData = {};
+    const inputList = document.querySelectorAll(`.${styles.popupInput}`);
+    inputList.forEach(input => {
+      formData[input.name] = input.value;
+    });
+    return formData;
+  };
+
+  //Функция для подстановки новых данных (из инпутов в профиль)
+  const setInputValues = ({ inputName, inputAbout }) => {
+    setName(inputName);
+    setAbout(inputAbout);
+  };
+
   return (
     <div
       className={active ? classNames(styles.popupOverlay, styles.popupActive) : styles.popupOverlay}
@@ -27,15 +47,20 @@ const EditPopup = ({ active, setActive }) => {
         >
           <img src={closeBtnImage} className={styles.closeIcon} alt="Закрыть окно" />
         </button>
-        <form className={styles.popupFrom} noValidate>
+        <form className={styles.popupForm} noValidate>
           <h2 className={styles.popupTitle}>Редактировать персонажа</h2>
           <input
             className={styles.popupInput}
             name="inputName"
+            id="inputName"
             type="text"
             placeholder="Имя персонажа"
             minLength="2"
             maxLength="40"
+            value={nameInputValue}
+            onChange={event => {
+              setNameInputValue(event.target.value);
+            }}
             required
           />
           <span className={styles.popupError} id="inputName-error"></span>
@@ -45,7 +70,11 @@ const EditPopup = ({ active, setActive }) => {
             type="text"
             placeholder="Описание персонажа"
             minLength="2"
-            maxLength="200"
+            maxLength="300"
+            value={aboutInputValue}
+            onChange={event => {
+              setAboutInputValue(event.target.value);
+            }}
             required
           />
           <span className={styles.popupError} id="inputAbout-error"></span>
@@ -54,6 +83,7 @@ const EditPopup = ({ active, setActive }) => {
             className={styles.popupButton}
             onClick={event => {
               event.preventDefault();
+              setInputValues(getInputValues());
               setActive(false);
             }}
           >
