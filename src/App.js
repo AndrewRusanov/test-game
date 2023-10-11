@@ -1,13 +1,16 @@
+import { Route, Routes } from 'react-router';
 import './App.css';
-import Activities from './components/activities/Activities';
-import Header from './components/header/Header';
+import Start from './components/start/Start';
+import Main from './components/main/Main';
 
 function App() {
   return (
-    <div className="page">
-      <Header />
-      <Activities />
-    </div>
+    <main className="page">
+      <Routes>
+        <Route index path="/" element={<Start />} />
+        <Route path="main" element={<Main />} />
+      </Routes>
+    </main>
   );
 }
 
