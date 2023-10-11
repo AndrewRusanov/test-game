@@ -2,13 +2,13 @@
 .profileContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 
 .profileWrapper {
   display: grid;
-  grid-template-columns: 200px minmax(200px, auto);
+  grid-template-columns: 200px minmax(150px, auto);
   width: 100%;
   border-radius: 20px;
   background-color: #595eb0;
@@ -25,5 +25,10 @@
 @media screen and (max-width: 1279px) {
   .profileWrapper {
     grid-template-columns: 120px minmax(160px, auto);
+  }
+
+  .profileContainer {
+    flex-direction: column;
+    justify-content: space-around;
   }
 }
