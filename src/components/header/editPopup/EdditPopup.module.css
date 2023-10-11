@@ -10,6 +10,11 @@
   left: 0;
   transition: opacity 0.3s, visibility 0.3s;
   /* Надо поменять */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.popupActive {
   opacity: 1;
   visibility: visible;
 }
@@ -85,7 +90,7 @@
 }
 
 .popupButton {
-  background: #595eb0;
+  background: #101116;
   border: 0;
   padding: 0;
   outline: 0;
@@ -99,4 +104,14 @@
   height: 50px;
   margin: 15px 36px 35px;
   border-radius: 5px;
+}
+
+.popupButton:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.popupButton:active {
+  background-color: #cf502c;
+  opacity: 1;
 }

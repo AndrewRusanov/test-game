@@ -5,13 +5,17 @@ import Stats from './stats/Stats';
 import Avatar from './avatar/Avatar';
 import Actions from './actions/Actions';
 
-const Profile = () => {
+const Profile = ({ handleSetActive }) => {
   return (
     <div className={styles.profileContainer}>
       <div className={styles.profileWrapper}>
         <Avatar />
         <Info />
-        <Actions />
+        <Actions
+          handleSetActive={() => {
+            handleSetActive(true);
+          }}
+        />
       </div>
       <Stats />
     </div>

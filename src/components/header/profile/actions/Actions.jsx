@@ -1,10 +1,15 @@
 import React from 'react';
 import styles from './Actions.module.css';
 
-const Actions = () => {
+const Actions = ({ handleSetActive }) => {
   return (
     <div className={styles.actionsBtnContainer}>
-      <button className={styles.actionsBtn}>
+      <button
+        className={styles.actionsBtn}
+        onClick={() => {
+          handleSetActive(true);
+        }}
+      >
         <p className={styles.actionsBtnText}>Редактировать</p>
       </button>
       <button className={styles.actionsBtn}>
