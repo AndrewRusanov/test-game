@@ -7,13 +7,13 @@ const Start = () => {
     <div className={styles.startWrapper}>
       <div className={styles.startContainer}>
         <h1 className={styles.startTitle}>Добро пожаловать!</h1>
-        <NavLink to="main" className={styles.startButtonContainer}>
+        <NavLink to="create" className={styles.startButtonContainer}>
           <button className={styles.startButton}>
             <p className={styles.startButtonText}>Создать персонажа</p>
           </button>
         </NavLink>
 
-        <NavLink className={styles.startButtonContainer}>
+        <NavLink to="import" className={styles.startButtonContainer}>
           <button className={styles.startButton}>
             <p className={styles.startButtonText}>Импортировать персонажа</p>
           </button>
