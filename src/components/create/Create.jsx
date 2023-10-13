@@ -2,23 +2,21 @@ import React, { useState } from 'react';
 import styles from './Create.module.css';
 import { NavLink } from 'react-router-dom';
 
-const Create = () => {
+const Create = ({ setInputValues }) => {
   // Состояния для инпутов
   const [nameInputValue, setNameInputValue] = useState('');
   const [aboutInputValue, setAboutInputValue] = useState('');
+  console.log('lox', setInputValues);
 
-  //   функция для сбора данных с формы
   const getInputValues = () => {
     const formData = {};
     const inputList = document.querySelectorAll(`.${styles.createInput}`);
     inputList.forEach(input => {
       formData[input.name] = input.value;
     });
+    console.log('Дададада', formData);
     return formData;
   };
-
-  //Функция для подстановки новых данных (из инпута в профиль)
-  const setInputValues = ({ inputName, inputAbout }) => {};
 
   return (
     <div className={styles.createWrapper}>
@@ -56,7 +54,14 @@ const Create = () => {
             <span className={styles.popupError} id="inputName-error"></span>
             <h2 className={styles.createSubtitle}>Задайте базовые навыки</h2>
             <NavLink to="/main">
-              <button type="submit" className={styles.createButton}>
+              <button
+                type="button"
+                className={styles.createButton}
+                onClick={() => {
+                  console.log('Я нажал сабмит');
+                  getInputValues();
+                }}
+              >
                 Создать
               </button>
             </NavLink>

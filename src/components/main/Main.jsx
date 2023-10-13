@@ -3,10 +3,20 @@ import styles from './Main.module.css';
 import Header from '../header/Header';
 import Activities from '../activities/Activities';
 
-const Main = () => {
+const Main = ({
+  characterName,
+  setCharacterName,
+  characterDescription,
+  setCharacterDescription
+}) => {
   return (
     <div className={styles.mainWrapper}>
-      <Header />
+      <Header
+        name={characterName}
+        setName={setCharacterName}
+        about={characterDescription}
+        setAbout={setCharacterDescription}
+      />
       <Activities />
     </div>
   );
