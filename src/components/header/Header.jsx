@@ -3,19 +3,24 @@ import styles from './Header.module.css';
 import Profile from './profile/Profile';
 import EditPopup from './editPopup/EditPopup';
 
-const Header = ({ name, setName, about, setAbout, params }) => {
-  // Добавляю состояние для класса, который делает попап видимым
+const Header = ({ name, setName, about, setAbout, params, setParams }) => {
   const [popupActive, setPopupActive] = useState(false);
-  // Добавляю состояния для имени и описания персонажа
 
   return (
     <header className={styles.header}>
-      <Profile handleSetActive={setPopupActive} name={name} about={about} params={params} />
+      <Profile
+        handleSetActive={setPopupActive}
+        name={name}
+        about={about}
+        params={params}
+        setParams={setParams}
+      />
       <EditPopup
         active={popupActive}
         setActive={setPopupActive}
         setName={setName}
         setAbout={setAbout}
+        // setParams={setParams}
       />
     </header>
   );

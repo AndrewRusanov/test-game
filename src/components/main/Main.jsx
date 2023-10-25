@@ -9,13 +9,15 @@ const Main = ({ name, setName, about, setAbout, params, setParams }) => {
 
   return (
     <div className={styles.mainWrapper}>
-      <Header name={name} setName={setName} about={about} setAbout={setAbout} params={params} />
-      <Activities
+      <Header
+        name={name}
+        setName={setName}
+        about={about}
+        setAbout={setAbout}
         params={params}
-        // setParams={setParams}
-        skills={skillsState}
-        setSkills={setSkillsState}
+        setParams={setParams}
       />
+      <Activities params={params} skills={skillsState} setSkills={setSkillsState} />
     </div>
   );
 };

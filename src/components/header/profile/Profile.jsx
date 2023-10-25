@@ -4,7 +4,7 @@ import Stats from './stats/Stats';
 import Avatar from './avatar/Avatar';
 import Actions from './actions/Actions';
 
-const Profile = ({ handleSetActive, name, about, params }) => {
+const Profile = ({ handleSetActive, name, about, params, setParams }) => {
   return (
     <div className={styles.profileContainer}>
       <div className={styles.profileWrapper}>
@@ -14,6 +14,8 @@ const Profile = ({ handleSetActive, name, about, params }) => {
           handleSetActive={() => {
             handleSetActive(true);
           }}
+          params={params}
+          setParams={setParams}
         />
       </div>
       <Stats params={params} />

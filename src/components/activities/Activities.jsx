@@ -145,7 +145,7 @@ const Activities = ({ params, skills, setSkills }) => {
             className={styles.improveButton}
             type="button"
             onClick={() => {
-              if (intimidationState < 5 && insightState < params.charisma) {
+              if (intimidationState < 5 && intimidationState < params.charisma) {
                 setIntimidationState(intimidationState + 1);
               }
             }}
