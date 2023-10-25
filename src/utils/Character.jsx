@@ -13,7 +13,7 @@ export default class Character {
     this.skills = {
       attack: 0,
       archery: 0,
-      stealht: 0,
+      stealth: 0,
       learning: 0,
       survival: 0,
       medicine: 0,
@@ -54,18 +54,20 @@ export default class Character {
   }
 
   kick() {
-    this.vitality && this.vitality--;
+    if (this.vitality) {
+      this.vitality = this.vitality - 1;
+    }
   }
 
   trainAttack() {
     if (this.skills.attack < this.strength) {
-      this.skills.attack++;
+      this.skills.attack = this.skills.attack + 1;
     }
   }
 
   trainStealth() {
-    if (this.skills.stealht < this.agility) {
-      this.skills.stealht++;
+    if (this.skills.stealth < this.agility) {
+      this.skills.stealth++;
     }
   }
 
