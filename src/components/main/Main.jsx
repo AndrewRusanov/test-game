@@ -1,22 +1,11 @@
-import React from 'react';
 import styles from './Main.module.css';
 import Header from '../header/Header';
 import Activities from '../activities/Activities';
 
-const Main = ({
-  characterName,
-  setCharacterName,
-  characterDescription,
-  setCharacterDescription
-}) => {
+const Main = ({ name, setName, about, setAbout }) => {
   return (
     <div className={styles.mainWrapper}>
-      <Header
-        name={characterName}
-        setName={setCharacterName}
-        about={characterDescription}
-        setAbout={setCharacterDescription}
-      />
+      <Header name={name} setName={setName} about={about} setAbout={setAbout} />
       <Activities />
     </div>
   );

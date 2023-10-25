@@ -6,7 +6,6 @@ import Create from './components/create/Create';
 import { useState } from 'react';
 
 function App() {
-  // Состояния для имени персонажа
   const [characterName, setCharacterName] = useState('');
   const [characterDescription, setCharacterDescription] = useState('');
 
