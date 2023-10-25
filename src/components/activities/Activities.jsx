@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './Activities.module.css';
 
-const Activities = ({ setParams, skills, setSkills }) => {
+const Activities = ({ params, skills, setSkills }) => {
   const [attackState, setAttackState] = useState(skills.attack);
   const [archeryState, setArcheryState] = useState(skills.archery);
   const [stealthState, setStealthState] = useState(skills.stealth);
@@ -15,8 +15,30 @@ const Activities = ({ setParams, skills, setSkills }) => {
 
   const gradeSkiks = ['Нетренированный', 'Новичок', 'Ученик', 'Адепт', 'Эксперт', 'Мастер'];
 
+  const setNewSkills = () => {
+    setSkills({
+      attack: attackState,
+      archery: archeryState,
+      stealth: stealthState,
+      learning: learningState,
+      survival: survivalState,
+      medicine: medicineState,
+      intimidation: intimidationState,
+      insight: insightState,
+      appearance: appearanceState,
+      manipulation: manipulationState
+    });
+  };
+
+  console.log('skills', skills);
+
   return (
-    <section className={styles.activitiesContainer}>
+    <section
+      className={styles.activitiesContainer}
+      onClick={() => {
+        setNewSkills();
+      }}
+    >
       <h2 className={styles.activitiesTitle}>Тренировки</h2>
       <div className={styles.activitiesWrapper}>
         <div className={styles.activityWrapper}>
@@ -27,7 +49,7 @@ const Activities = ({ setParams, skills, setSkills }) => {
             className={styles.improveButton}
             type="button"
             onClick={() => {
-              if (attackState < 5) {
+              if (attackState < 5 && attackState < params.strength) {
                 setAttackState(attackState + 1);
               }
             }}
@@ -43,7 +65,7 @@ const Activities = ({ setParams, skills, setSkills }) => {
             className={styles.improveButton}
             type="button"
             onClick={() => {
-              if (archeryState < 5) {
+              if (archeryState < 5 && archeryState < params.agility) {
                 setArcheryState(archeryState + 1);
               }
             }}
@@ -59,7 +81,7 @@ const Activities = ({ setParams, skills, setSkills }) => {
             className={styles.improveButton}
             type="button"
             onClick={() => {
-              if (stealthState < 5) {
+              if (stealthState < 5 && stealthState < params.agility) {
                 setStealthState(stealthState + 1);
               }
             }}
@@ -75,7 +97,7 @@ const Activities = ({ setParams, skills, setSkills }) => {
             className={styles.improveButton}
             type="button"
             onClick={() => {
-              if (learningState < 5) {
+              if (learningState < 5 && learningState < params.intelligence) {
                 setLearningState(learningState + 1);
               }
             }}
@@ -91,7 +113,7 @@ const Activities = ({ setParams, skills, setSkills }) => {
             className={styles.improveButton}
             type="button"
             onClick={() => {
-              if (survivalState < 5) {
+              if (survivalState < 5 && survivalState < params.intelligence) {
                 setSurvivalState(survivalState + 1);
               }
             }}
@@ -107,7 +129,7 @@ const Activities = ({ setParams, skills, setSkills }) => {
             className={styles.improveButton}
             type="button"
             onClick={() => {
-              if (medicineState < 5) {
+              if (medicineState < 5 && medicineState < params.intelligence) {
                 setMedicineState(medicineState + 1);
               }
             }}
@@ -123,7 +145,7 @@ const Activities = ({ setParams, skills, setSkills }) => {
             className={styles.improveButton}
             type="button"
             onClick={() => {
-              if (intimidationState < 5) {
+              if (intimidationState < 5 && insightState < params.charisma) {
                 setIntimidationState(intimidationState + 1);
               }
             }}
@@ -139,7 +161,7 @@ const Activities = ({ setParams, skills, setSkills }) => {
             className={styles.improveButton}
             type="button"
             onClick={() => {
-              if (insightState < 5) {
+              if (insightState < 5 && insightState < params.charisma) {
                 setInsightState(insightState + 1);
               }
             }}
@@ -155,7 +177,7 @@ const Activities = ({ setParams, skills, setSkills }) => {
             className={styles.improveButton}
             type="button"
             onClick={() => {
-              if (appearanceState < 5) {
+              if (appearanceState < 5 && appearanceState < params.charisma) {
                 setAppearanceState(appearanceState + 1);
               }
             }}
@@ -171,7 +193,7 @@ const Activities = ({ setParams, skills, setSkills }) => {
             className={styles.improveButton}
             type="button"
             onClick={() => {
-              if (manipulationState < 5) {
+              if (manipulationState < 5 && manipulationState < params.charisma) {
                 setManipulationState(manipulationState + 1);
               }
             }}

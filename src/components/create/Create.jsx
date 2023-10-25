@@ -2,9 +2,13 @@ import { useState } from 'react';
 import styles from './Create.module.css';
 import { useNavigate } from 'react-router-dom';
 
-const Create = ({ setValues }) => {
+const Create = ({ setValues, params, setParams }) => {
   const [nameValue, setNameValue] = useState('');
   const [aboutValue, setAboutValue] = useState('');
+  const [strength, setStrength] = useState(params.strength);
+  const [agility, setAgility] = useState(params.agility);
+  const [intelligence, setIntelligence] = useState(params.intelligence);
+  const [charisma, setCharisma] = useState(params.charisma);
   const navigate = useNavigate();
 
   const submit = event => {
@@ -12,6 +16,15 @@ const Create = ({ setValues }) => {
     setValues({
       inputName: nameValue,
       inputAbout: aboutValue
+    });
+    setParams({
+      strength: strength,
+      agility: agility,
+      intelligence: intelligence,
+      charisma: charisma,
+      vitality: 3 + Number(strength),
+      evasion: 10 + Number(agility),
+      vigor: Number(agility) + Number(intelligence)
     });
     navigate('/main');
   };
@@ -44,6 +57,74 @@ const Create = ({ setValues }) => {
                 setAboutValue(event.target.value);
               }}
             />
+            <h2 className={styles.createSubtitle}>Задайте базовые параметры</h2>
+            <div className={styles.createParamsContainer}>
+              <div className={styles.createParamsWrapper}>
+                <label htmlFor="strength">Сила: </label>
+                <input
+                  className={styles.createParamsInput}
+                  type="number"
+                  step={1}
+                  min={0}
+                  max={5}
+                  id="strength"
+                  name="strength"
+                  value={strength}
+                  onChange={event => {
+                    setStrength(event.target.value);
+                  }}
+                />
+              </div>
+              <div className={styles.createParamsWrapper}>
+                <label htmlFor="agility">Ловкость: </label>
+                <input
+                  className={styles.createParamsInput}
+                  type="number"
+                  step={1}
+                  min={0}
+                  max={5}
+                  id="agility"
+                  name="agility"
+                  value={agility}
+                  onChange={event => {
+                    setAgility(event.target.value);
+                  }}
+                />
+              </div>
+              <div className={styles.createParamsWrapper}>
+                <label htmlFor="intelligence">Интеллект: </label>
+                <input
+                  className={styles.createParamsInput}
+                  type="number"
+                  step={1}
+                  min={0}
+                  max={5}
+                  id="intelligence"
+                  name="intelligence"
+                  value={intelligence}
+                  onChange={event => {
+                    setIntelligence(event.target.value);
+                  }}
+                />
+              </div>
+
+              <div className={styles.createParamsWrapper}>
+                <label htmlFor="charisma">Харизма: </label>
+                <input
+                  className={styles.createParamsInput}
+                  type="number"
+                  step={1}
+                  min={0}
+                  max={5}
+                  id="charisma"
+                  name="charisma"
+                  value={charisma}
+                  onChange={event => {
+                    setCharisma(event.target.value);
+                  }}
+                />
+              </div>
+            </div>
             <button type="submit" className={styles.createButton}>
               Создать
             </button>

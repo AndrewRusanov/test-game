@@ -64,18 +64,6 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.popupError {
-  font-weight: 400;
-  min-height: 30px;
-  font-size: 12px;
-  line-height: 1.21;
-  color: red;
-  margin: 0 36px;
-  display: block;
-  opacity: 0;
-  visibility: hidden;
-}
-
 .createButton {
   background: #101116;
   border: 0;
@@ -101,4 +89,31 @@
 .createButton:active {
   opacity: 1;
   background-color: #cf502c;
+}
+
+.createParamsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.createParamsWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.createParamsInput {
+  vertical-align: top;
+  outline: none;
+  padding: 0;
+  height: 20px;
+  line-height: 20px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.createParamsInput:focus {
+  outline: 2px solid #cf502c;
 }

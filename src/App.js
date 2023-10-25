@@ -4,10 +4,12 @@ import Start from './components/start/Start';
 import Main from './components/main/Main';
 import Create from './components/create/Create';
 import { useState } from 'react';
+import { parametrs } from './utils/constants.js';
 
 function App() {
   const [characterName, setCharacterName] = useState('');
   const [characterDescription, setCharacterDescription] = useState('');
+  const [paramsState, setParamsState] = useState(parametrs);
 
   const setInputValues = data => {
     setCharacterName(data.inputName);
@@ -25,6 +27,8 @@ function App() {
               setValues={data => {
                 setInputValues(data);
               }}
+              params={paramsState}
+              setParams={setParamsState}
             />
           }
         />
@@ -40,6 +44,8 @@ function App() {
               setAbout={() => {
                 setCharacterDescription();
               }}
+              params={paramsState}
+              setParams={setParamsState}
             />
           }
         />
