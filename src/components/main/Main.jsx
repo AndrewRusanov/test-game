@@ -5,7 +5,7 @@ import Character from '../../utils/Character';
 
 const Main = ({ name, setName, about, setAbout }) => {
   // Вот тут будет функционал всего)))
-  const gradeSkiks = ['Нетренированный', 'Новичок', 'Ученик', 'Адепт', 'Эксперт', 'Мастер'];
+
   const character = new Character(name, about, {
     strength: 0,
     intelligence: 0,
@@ -22,7 +22,7 @@ const Main = ({ name, setName, about, setAbout }) => {
         setAbout={setAbout}
         character={character}
       />
-      <Activities />
+      <Activities character={character} />
     </div>
   );
 };
