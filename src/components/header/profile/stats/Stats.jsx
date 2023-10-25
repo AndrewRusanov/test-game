@@ -1,25 +1,19 @@
-import React from 'react';
 import styles from './Stats.module.css';
-import Tag from './tag/Tag';
 
-const statsArray = [
-  'Сила',
-  'Интеллект',
-  'Ловоксть',
-  'Харизма',
-  'Жизненная сила',
-  'Уклонение',
-  'Энергичность'
-];
+const Stats = ({ character }) => {
+  console.log(character.strength);
 
-const Stats = () => {
   return (
     <div className={styles.statsWrapper}>
       <h2 className={styles.statsTitle}>Умения</h2>
       <div className={styles.statsContainer}>
-        {statsArray.map(element => {
-          return <Tag key={element} statValue={`${element}: `} />;
-        })}
+        <p className={styles.statsValue}>Сила: </p>
+        <p className={styles.statsValue}>Интеллект: </p>
+        <p className={styles.statsValue}>Ловкость: </p>
+        <p className={styles.statsValue}>Харизма: </p>
+        <p className={styles.statsValue}>Уклонение:</p>
+        <p className={styles.statsValue}>Энергичность: </p>
+        <p className={styles.statsValue}>Жизненная сила: </p>
       </div>
     </div>
   );

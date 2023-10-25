@@ -1,6 +1,7 @@
 export default class Character {
-  constructor(name, { strength, intelligence, agility, charisma }) {
+  constructor(name, about, { strength, intelligence, agility, charisma }) {
     this.name = name;
+    this.about = about;
     this.strength = strength; //сила
     this.agility = agility; //ловкость
     this.intelligence = intelligence; //интеллектэнергичность
