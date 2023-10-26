@@ -60,7 +60,9 @@ const Create = ({ setValues, params, setParams }) => {
             <h2 className={styles.createSubtitle}>Задайте базовые параметры</h2>
             <div className={styles.createParamsContainer}>
               <div className={styles.createParamsWrapper}>
-                <label htmlFor="strength">Сила: </label>
+                <label className={styles.createParamsLabel} htmlFor="strength">
+                  Сила:{' '}
+                </label>
                 <input
                   className={styles.createParamsInput}
                   type="number"
@@ -76,7 +78,9 @@ const Create = ({ setValues, params, setParams }) => {
                 />
               </div>
               <div className={styles.createParamsWrapper}>
-                <label htmlFor="agility">Ловкость: </label>
+                <label className={styles.createParamsLabel} htmlFor="agility">
+                  Ловкость:{' '}
+                </label>
                 <input
                   className={styles.createParamsInput}
                   type="number"
@@ -92,7 +96,9 @@ const Create = ({ setValues, params, setParams }) => {
                 />
               </div>
               <div className={styles.createParamsWrapper}>
-                <label htmlFor="intelligence">Интеллект: </label>
+                <label className={styles.createParamsLabel} htmlFor="intelligence">
+                  Интеллект:{' '}
+                </label>
                 <input
                   className={styles.createParamsInput}
                   type="number"
@@ -107,9 +113,10 @@ const Create = ({ setValues, params, setParams }) => {
                   }}
                 />
               </div>
-
               <div className={styles.createParamsWrapper}>
-                <label htmlFor="charisma">Харизма: </label>
+                <label className={styles.createParamsLabel} htmlFor="charisma">
+                  Харизма:{' '}
+                </label>
                 <input
                   className={styles.createParamsInput}
                   type="number"

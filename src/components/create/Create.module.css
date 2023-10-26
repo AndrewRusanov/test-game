@@ -77,7 +77,7 @@
   text-align: center;
   width: calc(100% - 50px);
   height: 50px;
-  margin: 15px auto 15px;
+  margin: 15px 25px;
   border-radius: 5px;
 }
 
@@ -96,6 +96,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin: 0px 25px;
 }
 
 .createParamsWrapper {
@@ -106,14 +107,28 @@
 
 .createParamsInput {
   vertical-align: top;
+  text-align: center;
   outline: none;
   padding: 0;
-  height: 20px;
+  height: 40px;
   line-height: 20px;
   border: 1px solid #ddd;
-  font-size: 14px;
+  font-size: 20px;
+  margin: 0px 10px;
 }
 
 .createParamsInput:focus {
   outline: 2px solid #cf502c;
+}
+
+.createParamsLabel {
+  align-self: center;
+}
+
+@media screen and (max-width: 1439px) {
+  .createParamsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
