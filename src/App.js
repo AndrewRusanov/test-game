@@ -37,12 +37,9 @@ function App() {
           element={
             <Main
               name={characterName}
-              setName={() => {
-                setCharacterName();
-              }}
               about={characterDescription}
-              setAbout={() => {
-                setCharacterDescription();
+              setValues={data => {
+                setInputValues(data);
               }}
               params={paramsState}
               setParams={setParamsState}

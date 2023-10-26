@@ -30,8 +30,6 @@ const Activities = ({ params, skills, setSkills }) => {
     });
   };
 
-  console.log('skills', skills);
-
   return (
     <section
       className={styles.activitiesContainer}

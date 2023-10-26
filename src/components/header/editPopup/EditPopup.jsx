@@ -3,7 +3,7 @@ import styles from './EdditPopup.module.css';
 import closeBtnImage from '../../../images/closeIcon.png';
 import classNames from 'classnames';
 
-const EditPopup = ({ active, setActive, setName, setAbout }) => {
+const EditPopup = ({ active, setActive, setValues }) => {
   // состояния для инпутов
   const [nameInputValue, setNameInputValue] = useState('');
   const [aboutInputValue, setAboutInputValue] = useState('');
@@ -15,13 +15,8 @@ const EditPopup = ({ active, setActive, setName, setAbout }) => {
     inputList.forEach(input => {
       formData[input.name] = input.value;
     });
+    console.log(formData);
     return formData;
-  };
-
-  //Функция для подстановки новых данных (из инпутов в профиль)
-  const setInputValues = ({ inputName, inputAbout }) => {
-    setName(inputName);
-    setAbout(inputAbout);
   };
 
   return (
@@ -47,7 +42,14 @@ const EditPopup = ({ active, setActive, setName, setAbout }) => {
         >
           <img src={closeBtnImage} className={styles.closeIcon} alt="Закрыть окно" />
         </button>
-        <form className={styles.popupForm} noValidate>
+        <form
+          className={styles.popupForm}
+          noValidate
+          onSubmit={event => {
+            event.preventDefault();
+            setValues(getInputValues());
+          }}
+        >
           <h2 className={styles.popupTitle}>Редактировать персонажа</h2>
           <input
             className={styles.popupInput}
@@ -81,9 +83,7 @@ const EditPopup = ({ active, setActive, setName, setAbout }) => {
           <button
             type="submit"
             className={styles.popupButton}
-            onClick={event => {
-              event.preventDefault();
-              setInputValues(getInputValues());
+            onClick={() => {
               setActive(false);
             }}
           >
