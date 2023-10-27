@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import styles from './Actions.module.css';
 
-const Actions = ({ handleSetActive, name, about, params, setParams, skills }) => {
+const Actions = ({
+  handleSetActive,
+  name,
+  about,
+  params,
+  setParams,
+  skills,
+  setSkills,
+  setValues
+}) => {
   const [urlState, setUrlState] = useState('');
   const [objectState, setObjectState] = useState('');
 
@@ -15,9 +24,48 @@ const Actions = ({ handleSetActive, name, about, params, setParams, skills }) =>
       >
         <p className={styles.actionsBtnText}>Редактировать</p>
       </button>
-      <button className={styles.actionsBtn}>
-        <p className={styles.actionsBtnText}>Импортировать</p>
-      </button>
+      <input
+        id="characterLoader"
+        type="file"
+        onChange={event => {
+          event.preventDefault();
+          const file = event.target.files[0];
+          let reader = new FileReader();
+          reader.readAsText(file);
+          reader.onload = function () {
+            let character = JSON.parse(reader.result);
+            setValues({
+              inputName: character.name,
+              inputAbout: character.about
+            });
+            setParams({
+              strength: character.parametres.strength,
+              agility: character.parametres.agility,
+              intelligence: character.parametres.intelligence,
+              charisma: character.parametres.charisma,
+              vitality: character.parametres.vitality,
+              evasion: character.parametres.evasion,
+              vigor: character.parametres.vigor
+            });
+            setSkills({
+              attack: character.skills.attack,
+              archery: character.skills.archery,
+              stealth: character.skills.stealth,
+              learning: character.skills.learning,
+              survival: character.skills.survival,
+              medicine: character.skills.medicine,
+              intimidation: character.skills.intimidation,
+              insight: character.skills.insight,
+              appearance: character.skills.appearance,
+              manipulation: character.skills.manipulation
+            });
+          };
+
+          reader.onerror = function () {
+            alert(`Ошибка загрузки файла: ${reader.error}`);
+          };
+        }}
+      />
 
       <a
         href={urlState}

@@ -1,12 +1,9 @@
 import styles from './Main.module.css';
 import Header from '../header/Header';
 import Activities from '../activities/Activities';
-import { skills } from '../../utils/constants.js';
 import { useState } from 'react';
 
-const Main = ({ name, about, setValues, params, setParams }) => {
-  const [skillsState, setSkillsState] = useState(skills);
-
+const Main = ({ name, about, setValues, params, setParams, skills, setSkills }) => {
   return (
     <div className={styles.mainWrapper}>
       <Header
@@ -15,9 +12,10 @@ const Main = ({ name, about, setValues, params, setParams }) => {
         setValues={setValues}
         params={params}
         setParams={setParams}
-        skills={skillsState}
+        skills={skills}
+        setSkills={setSkills}
       />
-      <Activities params={params} skills={skillsState} setSkills={setSkillsState} />
+      <Activities params={params} setParams={setParams} skills={skills} setSkills={setSkills} />
     </div>
   );
 };

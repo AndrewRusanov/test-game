@@ -3,7 +3,7 @@ import styles from './Header.module.css';
 import Profile from './profile/Profile';
 import EditPopup from './editPopup/EditPopup';
 
-const Header = ({ name, about, setValues, params, setParams, skills }) => {
+const Header = ({ name, about, setValues, params, setParams, skills, setSkills }) => {
   const [popupActive, setPopupActive] = useState(false);
 
   return (
@@ -15,6 +15,8 @@ const Header = ({ name, about, setValues, params, setParams, skills }) => {
         params={params}
         setParams={setParams}
         skills={skills}
+        setSkills={setSkills}
+        setValues={setValues}
       />
       <EditPopup
         active={popupActive}
