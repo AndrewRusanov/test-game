@@ -15,6 +15,7 @@ const Main = ({ name, about, setValues, params, setParams }) => {
         setValues={setValues}
         params={params}
         setParams={setParams}
+        skills={skillsState}
       />
       <Activities params={params} skills={skillsState} setSkills={setSkillsState} />
     </div>

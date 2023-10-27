@@ -27,6 +27,31 @@
   font-weight: 400;
   margin: 0 auto;
   padding: 0;
+  text-decoration: none;
+}
+
+.actionsBtnLink {
+  display: inline-block;
+  background-color: #140d2a;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  margin: 0 auto 5px;
+  padding: 14px 0;
+  border-radius: 5px;
+  text-align: center;
+  width: calc(100% / 4 - 10px);
+}
+
+.actionsBtnLink:hover {
+  opacity: 0.8;
+}
+
+.actionsBtnLink:active {
+  opacity: 1;
+  background-color: #cf502c;
 }
 
 .actionsBtn:hover {
@@ -45,10 +70,4 @@
 
 .actionsBtn:last-of-type:active {
   background-color: #140d2a;
-}
-
-/* 1280px..1439px */
-@media screen and (max-width: 1439px) {
-  .actionsBtn {
-  }
 }
