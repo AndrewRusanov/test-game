@@ -7,7 +7,7 @@ const Actions = ({
   about,
   params,
   setParams,
-  skills,
+  skill,
   setSkills,
   setValues
 }) => {
@@ -67,29 +67,32 @@ const Actions = ({
           };
 
           reader.onerror = function () {
-            alert(`Ошибка загрузки файла: ${reader.error}`);
+            console.log(`Ошибка загрузки файла: ${reader.error}`);
           };
         }}
       />
 
-      <a
-        href={urlState}
-        download
-        className={styles.actionsBtnLink}
-        onClick={() => {
-          const newCharacter = {
-            name: name,
-            about: about,
-            parametres: params,
-            skills: skills
-          };
-          setObjectState(JSON.stringify(newCharacter));
-          let blob = new Blob([objectState], { type: 'application/json' });
-          setUrlState(URL.createObjectURL(blob));
-        }}
-      >
-        Экспортировать
-      </a>
+      <button className={styles.actionsBtn}>
+        <a
+          href={urlState}
+          className={styles.actionsBtnText}
+          onClick={() => {
+            const newCharacter = {
+              name: name,
+              about: about,
+              parametres: params,
+              skills: skill
+            };
+            setObjectState(JSON.stringify(newCharacter));
+            let blob = new Blob([objectState], { type: 'application/json' });
+            setUrlState(URL.createObjectURL(blob));
+          }}
+          download
+        >
+          Экспортировать
+        </a>
+      </button>
+
       <button
         className={styles.actionsBtn}
         onClick={() => {
