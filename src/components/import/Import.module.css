@@ -1,0 +1,72 @@
+.importWrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../images/startBackground.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupContainer {
+  background-color: white;
+  color: black;
+  width: 50%;
+  min-height: 330px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'RobotoSlab';
+}
+
+.importTitle {
+  margin: 0 auto;
+  padding: 15px 0 0;
+  font-size: 38px;
+  line-height: 1.21;
+  font-weight: 700;
+}
+
+.importSubtitle {
+  color: gray;
+  margin: 20px auto;
+  padding: 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.21;
+  font-weight: 700;
+}
+
+.importInput {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.importBtnLink {
+  display: inline-block;
+  background-color: #140d2a;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  margin: 0 auto 5px;
+  padding: 14px 0;
+  border-radius: 5px;
+  text-align: center;
+  width: 50%;
+}
+
+.importBtnLink:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.importBtnLink:active {
+  opacity: 1;
+  background-color: #cf502c;
+}

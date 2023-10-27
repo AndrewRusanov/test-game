@@ -1,0 +1,80 @@
+/* >1440px */
+.actionsBtnContainer {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  width: calc(100% - 15px);
+}
+
+.actionsBtn {
+  font-family: 'RobotoSlab';
+  margin: 0 auto 5px;
+  height: 50px;
+  background-color: #140d2a;
+  border-radius: 5px;
+  text-align: center;
+  border: none;
+  width: calc(100% / 4 - 10px);
+}
+
+.actionsBtnText {
+  color: white;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  margin: 0 auto;
+  padding: 0;
+  text-decoration: none;
+}
+
+.actionsBtnLink {
+  display: inline-block;
+  background-color: #140d2a;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  margin: 0 auto 5px;
+  padding: 14px 0;
+  border-radius: 5px;
+  text-align: center;
+  width: calc(100% / 4 - 10px);
+}
+
+.actionsBtnLink:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.actionsBtnLink:active {
+  opacity: 1;
+  background-color: #cf502c;
+}
+
+.actionsBtn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.actionsBtn:active {
+  background-color: #cf502c;
+  opacity: 1;
+}
+
+.actionsBtn:last-of-type {
+  background-color: #cf502c;
+}
+
+.actionsBtn:last-of-type:active {
+  background-color: #140d2a;
+}
+
+.importInput {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
