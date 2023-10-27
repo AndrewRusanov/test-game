@@ -6,6 +6,7 @@ import Create from './components/create/Create';
 import { useState } from 'react';
 import { parametrs } from './utils/constants.js';
 import { skills } from './utils/constants.js';
+import Import from './components/import/Import';
 
 function App() {
   const [characterName, setCharacterName] = useState('');
@@ -22,6 +23,18 @@ function App() {
     <main className="page">
       <Routes>
         <Route index path="/" element={<Start />} />
+        <Route
+          path="import"
+          element={
+            <Import
+              setValues={data => {
+                setInputValues(data);
+              }}
+              setParams={setParamsState}
+              setSkills={setSkillsState}
+            />
+          }
+        />
         <Route
           path="create"
           element={

@@ -1,7 +1,6 @@
 import styles from './Main.module.css';
 import Header from '../header/Header';
 import Activities from '../activities/Activities';
-import { useState } from 'react';
 
 const Main = ({ name, about, setValues, params, setParams, skills, setSkills }) => {
   return (

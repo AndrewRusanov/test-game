@@ -24,8 +24,13 @@ const Actions = ({
       >
         <p className={styles.actionsBtnText}>Редактировать</p>
       </button>
+      <label className={styles.actionsBtnLink} htmlFor="characterLoader">
+        Импортировать
+      </label>
       <input
+        className={styles.importInput}
         id="characterLoader"
+        name="characterLoader"
         type="file"
         onChange={event => {
           event.preventDefault();
