@@ -9,7 +9,6 @@
   top: 0;
   left: 0;
   transition: opacity 0.3s, visibility 0.3s;
-  /* Надо поменять */
   opacity: 0;
   visibility: hidden;
 }
@@ -24,7 +23,6 @@
   position: relative;
   color: black;
   width: 550px;
-  min-height: 330px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -77,18 +75,6 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.popupError {
-  font-weight: 400;
-  min-height: 30px;
-  font-size: 12px;
-  line-height: 1.21;
-  color: red;
-  margin: 0 36px;
-  display: block;
-  opacity: 0;
-  visibility: hidden;
-}
-
 .popupButton {
   background: #101116;
   border: 0;
@@ -114,4 +100,48 @@
 .popupButton:active {
   background-color: #cf502c;
   opacity: 1;
+}
+
+.popupSubtitle {
+  margin: 20px auto;
+  padding: 0;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.21;
+  font-weight: 700;
+}
+
+.popupParamsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 430px;
+}
+
+.popupParamsWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.createParamsInput {
+  vertical-align: top;
+  text-align: center;
+  width: 70px;
+  outline: none;
+  padding: 0;
+  height: 40px;
+  line-height: 20px;
+  border: 1px solid #ddd;
+  font-size: 20px;
+  margin: 0px 10px;
+}
+
+.createParamsInput:focus {
+  outline: 2px solid #cf502c;
+}
+
+.createParamsLabel {
+  align-self: center;
 }

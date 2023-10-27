@@ -19,7 +19,8 @@ const Header = ({ name, about, setValues, params, setParams }) => {
         active={popupActive}
         setActive={setPopupActive}
         setValues={setValues}
-        // setParams={setParams}
+        params={params}
+        setParams={setParams}
       />
     </header>
   );

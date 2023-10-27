@@ -3,20 +3,29 @@ import styles from './EdditPopup.module.css';
 import closeBtnImage from '../../../images/closeIcon.png';
 import classNames from 'classnames';
 
-const EditPopup = ({ active, setActive, setValues }) => {
-  // состояния для инпутов
+const EditPopup = ({ active, setActive, setValues, params, setParams }) => {
   const [nameInputValue, setNameInputValue] = useState('');
   const [aboutInputValue, setAboutInputValue] = useState('');
+  const [strength, setStrength] = useState(params.strength);
+  const [agility, setAgility] = useState(params.agility);
+  const [intelligence, setIntelligence] = useState(params.intelligence);
+  const [charisma, setCharisma] = useState(params.charisma);
 
-  // Функция для сбора данных с формы
-  const getInputValues = () => {
-    const formData = {};
-    const inputList = document.querySelectorAll(`.${styles.popupInput}`);
-    inputList.forEach(input => {
-      formData[input.name] = input.value;
+  const submit = event => {
+    event.preventDefault();
+    setValues({
+      inputName: nameInputValue,
+      inputAbout: aboutInputValue
     });
-    console.log(formData);
-    return formData;
+    setParams({
+      strength: strength,
+      agility: agility,
+      intelligence: intelligence,
+      charisma: charisma,
+      vitality: 3 + Number(strength),
+      evasion: 10 + Number(agility),
+      vigor: Number(agility) + Number(intelligence)
+    });
   };
 
   return (
@@ -42,14 +51,7 @@ const EditPopup = ({ active, setActive, setValues }) => {
         >
           <img src={closeBtnImage} className={styles.closeIcon} alt="Закрыть окно" />
         </button>
-        <form
-          className={styles.popupForm}
-          noValidate
-          onSubmit={event => {
-            event.preventDefault();
-            setValues(getInputValues());
-          }}
-        >
+        <form className={styles.popupForm} noValidate onSubmit={submit}>
           <h2 className={styles.popupTitle}>Редактировать персонажа</h2>
           <input
             className={styles.popupInput}
@@ -65,7 +67,6 @@ const EditPopup = ({ active, setActive, setValues }) => {
             }}
             required
           />
-          <span className={styles.popupError} id="inputName-error"></span>
           <input
             className={styles.popupInput}
             name="inputAbout"
@@ -79,7 +80,82 @@ const EditPopup = ({ active, setActive, setValues }) => {
             }}
             required
           />
-          <span className={styles.popupError} id="inputAbout-error"></span>
+
+          <h2 className={styles.popupSubtitle}>Базовые параметры (от 0 до 5)</h2>
+          <div className={styles.popupParamsContainer}>
+            <div className={styles.popupParamsWrapper}>
+              <label htmlFor="strength" className={styles.createParamsLabel}>
+                Сила:{' '}
+              </label>
+              <input
+                className={styles.createParamsInput}
+                type="number"
+                step={1}
+                min={0}
+                max={5}
+                id="strength"
+                name="strength"
+                value={strength}
+                onChange={event => {
+                  setStrength(event.target.value);
+                }}
+              />
+            </div>
+            <div className={styles.popupParamsWrapper}>
+              <label htmlFor="intelligence" className={styles.createParamsLabel}>
+                Интеллект:{' '}
+              </label>
+              <input
+                className={styles.createParamsInput}
+                type="number"
+                step={1}
+                min={0}
+                max={5}
+                id="intelligence"
+                name="intelligence"
+                value={intelligence}
+                onChange={event => {
+                  setIntelligence(event.target.value);
+                }}
+              />
+            </div>
+            <div className={styles.popupParamsWrapper}>
+              <label htmlFor="agility" className={styles.createParamsLabel}>
+                Ловкость:{' '}
+              </label>
+              <input
+                className={styles.createParamsInput}
+                type="number"
+                step={1}
+                min={0}
+                max={5}
+                id="agility"
+                name="agility"
+                value={agility}
+                onChange={event => {
+                  setAgility(event.target.value);
+                }}
+              />
+            </div>
+            <div className={styles.popupParamsWrapper}>
+              <label htmlFor="charisma" className={styles.createParamsLabel}>
+                Харизма:{' '}
+              </label>
+              <input
+                className={styles.createParamsInput}
+                type="number"
+                step={1}
+                min={0}
+                max={5}
+                id="charisma"
+                name="charisma"
+                value={charisma}
+                onChange={event => {
+                  setCharisma(event.target.value);
+                }}
+              />
+            </div>
+          </div>
           <button
             type="submit"
             className={styles.popupButton}

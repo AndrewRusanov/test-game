@@ -57,7 +57,7 @@ const Create = ({ setValues, params, setParams }) => {
                 setAboutValue(event.target.value);
               }}
             />
-            <h2 className={styles.createSubtitle}>Задайте базовые параметры</h2>
+            <h2 className={styles.createSubtitle}>Задайте базовые параметры (от 0 до 5)</h2>
             <div className={styles.createParamsContainer}>
               <div className={styles.createParamsWrapper}>
                 <label className={styles.createParamsLabel} htmlFor="strength">
