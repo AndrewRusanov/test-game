@@ -72,26 +72,24 @@ const Actions = ({
         }}
       />
 
-      <button className={styles.actionsBtn}>
-        <a
-          href={urlState}
-          className={styles.actionsBtnText}
-          onClick={() => {
-            const newCharacter = {
-              name: name,
-              about: about,
-              parametres: params,
-              skills: skill
-            };
-            setObjectState(JSON.stringify(newCharacter));
-            let blob = new Blob([objectState], { type: 'application/json' });
-            setUrlState(URL.createObjectURL(blob));
-          }}
-          download
-        >
-          Экспортировать
-        </a>
-      </button>
+      <a
+        href={urlState}
+        className={styles.actionsBtnLink}
+        onClick={() => {
+          const newCharacter = {
+            name: name,
+            about: about,
+            parametres: params,
+            skills: skill
+          };
+          setObjectState(JSON.stringify(newCharacter));
+          let blob = new Blob([objectState], { type: 'application/json' });
+          setUrlState(URL.createObjectURL(blob));
+        }}
+        download
+      >
+        Экспортировать
+      </a>
 
       <button
         className={styles.actionsBtn}
